@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Bitmark Property Wallet",
+  "description": "Protect you digital properties",
+  "version": "1.0.0",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "public/index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "https://api.bitmark.com/",
+    "https://api.test.bitmark.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://localhost:*/*"
+      ],
+      "js": [
+        "wallet.js"
+      ]
+    }
+  ]
+}
